@@ -30,11 +30,11 @@ int DynamicArray::getElement(size_t index) const {
 
 void DynamicArray::add_back(int val) {
     if (size == capacity) {
-        resize(capacity * 2); // Optymalizacja: podwajamy pojemność
+        resize(capacity * 2); // Podwajamy pojemność, lepszy sposob niż +1
     }
     data[size++] = val;
 }
-
+//dodajemy na front, musimy przepisać wszystkie elementy do nowej tablicy
 void DynamicArray::add_front(int val) {
     if (size == capacity) {
         resize(capacity * 2);

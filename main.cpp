@@ -23,7 +23,7 @@ void runtest(){
         cout << "               ROZMIAR STRUKTURY: " << size << "\n";
         cout << "========================================================================\n";
 
-        // Tablice do sumowania czasów z 10 seedów, 0-dynamiczna, 1-1k, 2-2k. Przechowują łączny czas operacji z 10 seedów.
+        // Tablice do sumowania czasów z 10 seedów, 0-dynamiczna, 1-1k, 2-2k. Przechowują łączny czas operacji z 10 seedów dla konkretnego rozmiaru tablicy.
         long long t_search[3] = {0}, t_add_front[3] = {0}, t_rem_front[3] = {0};
         long long t_add_back[3] = {0}, t_rem_back[3] = {0}, t_add_rand[3] = {0}, t_rem_rand[3] = {0};
 
@@ -204,7 +204,7 @@ int main() {
 
     int glownyWybor = -1;
 
-    // GŁÓWNA PĘTLA - MENU POZIOM 1
+    // MENU POZIOM 1
     while (glownyWybor != 0) {
         cout << "\n-------------------------------------\n";
         cout << "               MENU GLOWNE               \n";
@@ -253,7 +253,7 @@ int main() {
                 case 0:
                     break;
 
-                case 1:
+                case 1: //otwieranie pliku
                     cout << "Podaj nazwe pliku (np. dane.txt): ";
                     cin >> nazwaPliku;
                     
@@ -276,7 +276,7 @@ int main() {
                     }
                     break;
 
-                case 2:
+                case 2: //usun index
                     cout << "Podaj INDEKS elementu do usuniecia: ";
                     cin >> indeks;
                     
@@ -298,7 +298,7 @@ int main() {
                     }
                     break;
 
-                case 3:
+                case 3: //dod na koniec
                     cout << "Podaj wartosc do dodania na koniec: ";
                     cin >> wartosc;
                     if (glownyWybor == 1) { arr.add_back(wartosc); cout << "Dodano do tablicy.\n"; }
@@ -306,11 +306,11 @@ int main() {
                     else if (glownyWybor == 3) { list2K.addAtEnd(wartosc); cout << "Dodano do listy 2K.\n"; }
                     break;
 
-                case 4:
+                case 4: //search
                     cout << "Podaj wartosc do znalezienia: ";
                     cin >> wartosc;
                     bool znaleziono;
-                    znaleziono = false; // Inicjalizacja zabezpieczająca
+                    znaleziono = false;
                     
                     if (glownyWybor == 1) znaleziono = arr.search(wartosc);
                     else if (glownyWybor == 2) znaleziono = list1K.isInList(wartosc);
@@ -338,7 +338,7 @@ int main() {
                     cout << "Wygenerowano losowo " << wielkosc << " elementow.\n";
                     break;
 
-                case 6:
+                case 6: // wypisujemy zawartość struktury
                     cout << "Zawartosc struktury:\n";
                     if (glownyWybor == 1) { 
                         for(size_t i = 0; i < arr.getSize(); i++) {

@@ -8,7 +8,7 @@ public:
     int element;
     Node* next_element;
 
-    Node(int val); // Dodamy przydatny konstruktor wezla
+    Node(int val);
 };
 
 class LinkedList {
@@ -23,7 +23,7 @@ public:
     void clear();
     void display() const;
     bool isEmpty() const;
-    size_t getSize() const; // Dodane, przydaje się do weryfikacji
+    size_t getSize() const;
 
     void addToFront(int element);
     void addAtEnd(int element);

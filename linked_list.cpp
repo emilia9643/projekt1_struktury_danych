@@ -80,7 +80,7 @@ void LinkedList::removeFromEnd() {
     }
     size--;
 }
-
+// iterujemy przez całą tablice
 bool LinkedList::isInList(int element) const {
     Node* current = head;
     while (current != nullptr) {
@@ -91,7 +91,7 @@ bool LinkedList::isInList(int element) const {
     }
     return false;
 }
-
+// iterujemy przez całą tablicę, na koniec zwiększamy size
 void LinkedList::addAtIndex(size_t index, int element) {
     if (index == 0) {
         addToFront(element);
